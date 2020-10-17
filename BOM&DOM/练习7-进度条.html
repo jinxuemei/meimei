@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 50px;
+            width: 400px;
+            border: 1px solid black;
+            border-radius: 15px;
+            overflow: hidden;
+            /* margin: 20px auto; */
+            /* line-height: 50px; */
+            
+        }
+        .content{
+            height: 50px;
+            width: 0px;
+            line-height: 50px;
+            background-color: darkcyan;
+        }
+        .btn {
+            border: 1px solid white;
+            display: block;
+            height: 50px;
+            width: 50px;
+            border-radius: 20px;
+            /* line-height: 50px; */
+            background-color: rgb(247, 234, 64);
+            /* margin: 20px auto; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="content">0%</div>
+    </div>
+    <button class="btn">开始</button>
+    <script>
+        var oBtn = document.getElementsByClassName("btn")[0];
+        var oContent = document.getElementsByClassName("content")[0];
+
+        oBtn.onclick = run;
+
+        var num = 0;
+        function run(){
+            if (oContent.offsetWidth<400){
+                oContent.style.width = (oContent.offsetWidth + 4) + "px";
+                oContent.innerText = (++num) + "%";
+                requestAnimationFrame(run);
+            }
+        }
+
+        // function run() {
+        //     var i = 0;
+        //     var timer = setInterval(function () {
+        //         if (oContent.offsetWidth<400) {
+        //             i++;
+        //             oContent.innerHTML = i + "%";
+        //             oContent.style.width = (oContent.offsetWidth + 4) + "px";
+        //         } else {
+        //             clearInterval(timer);
+        //         }
+        //     }, 16)
+
+        // }
+
+    </script>
+</body>
+
+</html>

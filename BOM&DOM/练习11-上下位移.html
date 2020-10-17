@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1,.div2,.div3{
+            height: 50px;
+            line-height: 50px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="div1">
+            <span>1</span>
+            <button class="down-btn">向下</button>
+            <button class="up-btn">向上</button>
+        </div>
+        <div class="div2">
+            <span>2</span>
+            <button class="down-btn">向下</button>
+            <button class="up-btn">向上</button>
+        </div>
+        <div class="div3">
+            <span>3</span>
+            <button class="down-btn">向下</button>
+            <button class="up-btn">向上</button>
+        </div>
+    </div>
+    
+    <script>
+        var oBox = document.querySelector(".box");
+        var dBtn = document.querySelectorAll(".down-btn");
+        var uBtn = document.querySelectorAll(".up-btn");
+        var aSpan = document.querySelectorAll("span");
+        // console.log(aSpan);
+        
+        for(var i = 0;i<dBtn.length;i++){
+            //向上
+           uBtn[i].onclick = function(){
+            var parentEl = this.parentElement;
+                var parentPr = parentEl.previousElementSibling;
+                // console.log(parentEl,parentPr);
+                if(parentPr){
+                    oBox.insertBefore(parentEl,parentPr);
+                }else{
+                    console.log("到顶了");
+                }
+           }
+           //向下
+            dBtn[i].onclick = function(){
+                var parentEl = this.parentElement;
+                var parentNe = parentEl.nextElementSibling;
+                // console.log(parentEl,parentPr);
+                if(parentNe){
+                    oBox.insertBefore(parentNe,parentEl);
+                }else{
+                    console.log("到底了");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

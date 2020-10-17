@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .box {
+            height: 250px;
+            width: 490px;
+            margin: 100px auto;
+            border: 5px solid white;
+            position: relative;
+        }
+
+        .img-content li {
+            display: none;
+        }
+
+        .img-content img {
+            height: 250px;
+            width: 490px;
+        }
+
+        .img-content .active {
+            display: block;
+        }
+
+        .btn-content {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            float: left;
+        }
+
+        .btn-content .btn-left {
+            float: left;
+        }
+
+        .btn-content .btn-right {
+            float: right;
+        }
+
+        .btn-content li {
+            float: left;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #f90;
+            color: white;
+            line-height: 20px;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .btn-content .active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img-content">
+            <ul>
+                <li class="img-list active"> <img src="./img/薛之谦1.jpg" alt=""></li>
+                <li class="img-list "><img src="./img/薛之谦2.jpg" alt=""></li>
+                <li class="img-list "><img src="./img/薛之谦3.jpg" alt=""></li>
+                <li class="img-list "><img src="./img/薛之谦4.jpg" alt=""></li>
+                <li class="img-list "><img src="./img/薛之谦5.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="btn-content">
+            <div class="btn-left">
+                <ul>
+                    <li class="arr-btn">&lt;</li>
+                    <li class="arr-btn">&gt;</li>
+                </ul>
+            </div>
+            <div class="btn-right">
+                <ul>
+                    <li class="num-btn active">1</li>
+                    <li class="num-btn">2</li>
+                    <li class="num-btn">3</li>
+                    <li class="num-btn">4</li>
+                    <li class="num-btn">5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var numBtn = document.getElementsByClassName("num-btn");
+        var imgList = document.getElementsByClassName("img-list");
+        var arrBtn = document.getElementsByClassName("arr-btn");
+        var oBox = document.getElementsByClassName("box")[0];
+        var nowIndex = 0;
+        var timer;
+        //切换图片函数
+        function actfun(index) {
+            for (var j = 0; j < numBtn.length; j++) {
+                numBtn[j].classList.remove("active");
+                imgList[j].classList.remove("active");
+            }
+            imgList[index].classList.add("active");
+            numBtn[index].classList.add("active");
+            nowIndex = index;
+        }
+
+        //数字按钮
+        for (var i = 0; i < numBtn.length; i++) {
+            numBtn[i].index = i;
+            numBtn[i].onmouseover = function () {
+                // nowIndex=this.index;
+                actfun(this.index);
+                // for (var j = 0; j < numBtn.length; j++) {
+                //     numBtn[j].classList.remove("active");
+                //     imgList[j].classList.remove("active");
+                // }
+
+                // this.classList.add("active");
+                // imgList[this.index].classList.add("active");
+            }
+        }
+        //向前按钮
+        arrBtn[0].onclick = function () {
+            var prevIndex = --nowIndex;
+            if (prevIndex == -1) {
+                prevIndex = 4;
+            }
+            actfun(prevIndex);
+            // for (var j = 0; j < numBtn.length; j++) {
+            //         numBtn[j].classList.remove("active");
+            //         imgList[j].classList.remove("active");
+            //     }
+            // imgList[prevIndex].classList.add("active");
+            // numBtn[prevIndex].classList.add("active");
+        }
+
+        //向后按钮
+        arrBtn[1].onclick = function () {
+            var nextIndex = (++nowIndex) % 5;
+            actfun(nextIndex);
+        }
+
+        
+        oBox.onmouseover = function(){
+            clearInterval(timer);
+        }
+        oBox.onmouseout = function(){
+            run();
+        }
+        //定时播放函数
+        function run() {
+            timer = setInterval(function () {
+                arrBtn[1].onclick();
+            }, 1000)
+        }
+        run();
+
+
+
+        // var i=0; 
+        // var timer = setInterval(function(){
+
+        //     i++;
+        //     // console.log(i);
+        //     actfun(i);
+        //     if(i==4){
+        //         i=-1;
+        //     }
+        // },5000)
+    </script>
+</body>
+
+</html>

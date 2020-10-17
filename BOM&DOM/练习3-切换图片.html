@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .box{
+            width: 600px;
+            border: 1px solid black;
+            margin: 100px auto;
+            height: 500px;
+        }
+        .big-img{
+            text-align: center;
+            border-bottom: 1px solid black;
+            height: 400px;
+            line-height: 400px;
+        }
+        .big-img  img{
+            width: 400px;
+            height: 400px;
+        }
+        .small-img li{
+            float: left;
+            width: 24.5%;
+            height: 96px;
+            text-align: center;
+            border-right: 1px solid black;
+            line-height: 96px;
+        }
+        .small-img li:last-child{
+            border-right: 0;
+        }
+        .small-img img {
+            width: 120px;
+            height: 94px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="big-img">
+            <img id="big-img" src="./img/img2.jpg" alt="">
+        </div>
+        <div class="small-img">
+            <ul>
+                <li><img src="./img/img2.jpg" alt=""></li>
+                <li><img src="./img/imgr1.jpg" alt=""></li>
+                <li><img src="./img/imgr2.jpg" alt=""></li>
+                <li><img src="./img/imgr3.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+   
+    <script>
+       var bigImg = document.getElementById("big-img");
+       var smallImg = document.getElementsByClassName("small-img")[0];
+       var arrImg = smallImg.getElementsByTagName("img");
+
+       for(var i=0;i<arrImg.length;i++){
+           arrImg[i].onmouseover = function(){
+               var _this = this.getAttribute("src");
+               bigImg.setAttribute("src",_this);
+           }
+       }
+    </script>
+</body>
+</html>

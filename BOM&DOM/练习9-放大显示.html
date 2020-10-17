@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .box,.box1{
+            height: 400px;
+            width: 400px;
+            margin-right: 20px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .box img{
+            height: 400px;
+            width: 400px;
+        }
+        .b-act{
+            height: 200px;
+            width: 200px;
+            background-color:rgba(255, 255, 255, 0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box1 img{
+
+            height: 800px;
+            width: 800px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"> 
+        <img src="./img/timg.jpg" alt="">
+        <div class="b-act"></div>
+    </div>
+    <div class="box1">
+        <img id="big-img" src="./img/timg.jpg" alt="">
+    </div>
+    <script>
+        var oAct = document.getElementsByClassName("b-act")[0];
+        var oBox = document.getElementsByClassName("box")[0];
+        var bigImg = document.getElementById("big-img");
+            oAct.onmousemove = function(event){
+                var moveTop = event.clientY-100;
+                var moveLeft = event.clientX-100;
+                if(moveTop<0){
+                    moveTop=0;
+                }
+                if(moveLeft<0){
+                    moveLeft=0;
+                }
+                if(moveTop>200){
+                    moveTop = 200;
+                }
+                if(moveLeft>200){
+                    moveLeft=200;
+                }
+                oAct.style.top = moveTop + "px";
+                oAct.style.left = moveLeft + "px";
+                bigImg.style.top = -2*moveTop+"px";
+                bigImg.style.left = -2*moveLeft + "px";
+            }
+
+
+    </script>
+</body>
+</html>
