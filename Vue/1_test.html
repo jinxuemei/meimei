@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <!-- 
+        el 挂在元素
+        data 数据
+        methods 方法
+     -->
+    <!-- v-html v-text  v-for  -->
+    <div id="app">
+        <h2 @click="change">{{hwq}}</h2>
+        <h2 v-html="msg"></h2>
+
+        <button @click = "fn"> click</button>
+        <ul>
+            <li v-for="jin in arr">{{jin}}</li>
+        </ul>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"<a href='#'>黄婉晴<a/>",
+                hwq:"狗蛋",
+                arr:['黄婉晴','真狗蛋','是个傻子']
+            },
+            methods:{
+                fn(){
+                    this.arr.push('黄婉晴憨憨一个，淦');
+                },
+                change(){
+                    this.hwq = "耶斯莫拉";
+                }
+            }
+            
+        })
+
+        
+    </script>
+</body>
+</html>

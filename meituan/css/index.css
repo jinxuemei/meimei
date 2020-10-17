@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+.header {
+    height: 50px;
+    background-color: #1C1B20;
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    padding:0 10px;
+}
+
+.header .location{
+    font-size: 16px;
+    float: left;
+    width: 2.43rem;
+    line-height: 50px;
+    overflow: hidden;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.header .search {
+    flex: 1;
+    /* display: flex; */
+    height: 30px;
+    /* text-align: center; */
+    border-radius: 15px;
+    background: #fff;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.search .icon-sousuo{
+    color: #1C1B20;
+    float: left;
+    margin: 8px 0 0 10px;
+}
+.search input{
+    float: left;
+    width: 2.4rem;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    height: 30px;
+}
+
+.cate-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cate-list{
+    
+    width: 20%;
+    text-align: center;
+    font-size: 11px;
+}
+.cate-list img{
+    width: 44px;
+    height: 44px;
+    margin-top: 14px;
+}

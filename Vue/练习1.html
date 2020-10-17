@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" v-model="proName">
+        <button @click="add">添加</button>
+        <ul>
+            <li v-for="obj in arr" @click = "change(obj)" :key="obj.name" :class="{red:obj.isRed}">{{obj.name}}
+                <button @click="del(index)">delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                arr:[
+                    {name:"香蕉",isRed:false},
+                    {name:"苹果",isRed:false},
+                ],
+                proName:''
+            },
+            methods:{
+                add(){
+                    this.arr.push({name:this.proName,isRed:false});
+                    this.proName="";
+                },
+                change(obj){
+                    obj.isRed=!obj.isRed;
+                },
+                del(idx){
+                    this.arr.splice(idx,1);
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

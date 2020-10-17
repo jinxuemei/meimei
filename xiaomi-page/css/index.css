@@ -1,0 +1,224 @@
+body {
+    font-size: 14px;
+    font-family: Helvetica, arial, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "微軟正黑體", "儷黑 Pro", sans-serif;
+
+}
+
+.header .h-logo {
+    width: 200px;
+    height: 98px;
+    background-image: url(../image/mistore_logo.png);
+}
+
+.center {
+    height: 588px;
+    width: 100%;
+    background-image: url(../image/c-bg.jpg);
+    background-position: center center;
+    /* 小手 */
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+.center .c-login {
+    height: 588px;
+    margin-top: 30px;
+}
+
+.center .login-box {
+    width: 410px;
+    height: 557px;
+    margin-left: auto;
+    margin-right: 0;
+    background: #fff;
+}
+
+.center .login-box .nav-tabs {
+    padding: 27px 0 24px;
+    text-align: center;
+    font-size: 24px;
+    color: #666;
+}
+
+.center .nav-tabs a {
+    color: #666;
+}
+
+.center .nav-tabs a.active {
+    color: #f56600;
+}
+
+.center .nav-tabs a:hover {
+    color: #f56600;
+}
+
+.center .nav-tabs span {
+    width: 1px;
+    height: 24px;
+    margin: 0 35px 0 37px;
+    border: 1px solid #e0e0e0;
+}
+
+.center .form-content {
+    width: 346px;
+
+    margin: 0 auto;
+}
+
+.center .form-content .input-box {
+    width: 306px;
+    height: 22px;
+    line-height: 22px;
+    margin-bottom: 14px;
+    padding: 13px 16px 13px 14px;
+    border: 1px solid #e0e0e0;
+}
+
+.center .form-content input {
+    border: none;
+    outline: none;
+}
+
+.center .input-box input {
+    width: 100%;
+}
+
+.center .form-content input::-webkit-input-placeholder {
+    color: #999;
+}
+
+.center .btn-box input {
+    background: #ff6700;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 14px;
+
+}
+
+.center .li-top,
+.center .li-bottom {
+    text-align: center;
+
+}
+
+.center .li-top {
+    margin-top: 14px;
+    margin-bottom: 30px;
+
+}
+
+.center .li-top a {
+    color: #f56600;
+}
+
+.center .li-bottom a {
+    color: #999;
+}
+
+.center .li-bottom span {
+    color: #999;
+}
+
+.center .other-login {
+    width: 338px;
+    padding-top: 143px;
+    margin: 0 auto;
+}
+
+.center .other-login fieldset {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+
+    border-color: #bbb;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.center .other-login legend {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.center .ol-icon ul {
+    margin-top: 5px;
+    padding: 0 40px;
+}
+
+.center .ol-icon li {
+    float: left;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 0 17px;
+    background-color: #0288d1
+}
+
+.center .ol-icon .sina {
+    background-color: #d32f2f;
+}
+
+.center .ol-icon .alpay {
+    background-color: #00aaee;
+}
+
+.center .ol-icon .wechat {
+    background-color: #00d20d;
+}
+
+.center .ol-icon i {
+    background-image: url(../image/icons_type.png);
+    width: 18px;
+    height: 18px;
+    display: block;
+    margin: 4px auto 0;
+}
+
+.center .qq i {
+    background-position: -19px 0;
+}
+
+.center .sina i {
+    background-position: -38px 0;
+}
+
+.center .alpay i {
+    background-position: -54px 1px;
+    width: 27px;
+}
+
+.center .wechat i {
+    background-position: -83px 1px;
+    width: 24px;
+}
+
+.footer {
+    height: 80px;
+    background: #fff;
+    margin-top: 0;
+    padding-top: 100px;
+    text-align: center;
+    color: #757575;
+}
+.footer .f-list li{
+    display: inline-block;
+    
+}
+.footer .f-list a.select{
+    color: #333;
+}
+.footer .f-list a{
+    color: #757575;
+    padding: 0 10px;
+}
+.footer .f-list a:hover{
+    color: #333;
+}
+.footer .f-intro{
+    padding: 10px;
+    /* color: #757575; */
+}
