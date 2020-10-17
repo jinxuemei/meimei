@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .box {
+            height: 400px;
+            width: 600px;
+            margin: 100px auto;
+        }
+        .img-box{
+            height: 400px;
+            position: relative;
+        }
+        .img-list{
+            height: 400px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        .active{
+            opacity: 1;
+        }
+        img{
+            height: 400px;
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img-box">
+            <ul>
+                <li class="img-list active"><img src="./image/薛之谦1.jpg" alt=""></li>
+                <li class="img-list"><img src="./image/薛之谦2.jpg" alt=""></li>
+                <li class="img-list"><img src="./image/薛之谦3.jpg" alt=""></li>
+                <li class="img-list"><img src="./image/薛之谦4.jpg" alt=""></li>
+                <li class="img-list"><img src="./image/薛之谦5.jpg" alt=""></li>
+            </ul>
+           
+        </div>
+    </div>
+
+    <script>
+        var oImg = document.querySelectorAll(".img-list");
+        var nowIndex = 0;
+        setInterval(function(){
+            oImg[nowIndex].classList.remove("active");
+            if(++nowIndex<5){
+                oImg[nowIndex].classList.add("active");
+            }else{
+                nowIndex = 0;
+                oImg[nowIndex].classList.add("active");
+            }
+        },2000)
+    </script>
+</body>
+
+</html>
