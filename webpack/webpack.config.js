@@ -1,4 +1,5 @@
 const path = require('path');
+const Html = require('html-webpack-plugin')
 
 module.exports = {
     //入口文件
@@ -16,7 +17,12 @@ module.exports = {
             {
                 test:/\.css$/,
                 use:['style-loader','css-loader']
+            },
+            {
+                test:/\.scss$/,
+                use:['style-loader','css-loader','sass-loader']
             }
+
         ]
     }
 }
