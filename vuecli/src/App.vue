@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view></router-view>
+   <!-- jinxiemeisazi
+   <test></test> -->
+   <router-link to="/home">首页</router-link>
+   <router-link to="/test">测试页面</router-link>
+  
   </div>
 </template>
+<script>
+// import Test from "./views/Test";
+export default {
+  // components: {
+  //   Test
+  // }
+};
+</script>
 
 <style lang="scss">
 #app {
