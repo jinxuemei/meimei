@@ -1,9 +1,11 @@
 <template>
   <div id="app">
+    <!-- 占位 -->
     <router-view></router-view>
    <!-- jinxiemeisazi
    <test></test> -->
    <router-link to="/home">首页</router-link>
+   |
    <router-link to="/test">测试页面</router-link>
   
   </div>

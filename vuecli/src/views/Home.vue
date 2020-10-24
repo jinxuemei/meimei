@@ -1,7 +1,10 @@
 <template>
     <div>
         <h2>靳雪梅</h2>
-        <p>超好的！</p>
+        <router-link to="/home/aa">A</router-link>
+        |
+        <router-link to="/home/bb">B</router-link>
+        <router-view></router-view>
     </div>
 </template>
 

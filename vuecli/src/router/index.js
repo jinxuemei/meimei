@@ -1,7 +1,11 @@
 import Vue from 'vue'
+//引入  两种方法
 import VueRouter from 'vue-router'
 import Home from './../views/Home'
-import Test from './../views/Test'
+// import Test from './../views/Test'
+import Test from '@/views/Test'
+import A from './../views/A'
+import B from './../views/B'
 
 Vue.use(VueRouter)
 
@@ -9,12 +13,25 @@ const routes = [
   
   {
     path: '/home',
-    component:Home
+    component:Home,
+    children:[
+      {
+        path:'aa',
+        component:A
+      },
+      {
+        path:'bb',
+        component:B
+      }
+    ]
   },
   {
     path:'/test',
-    component:Test
-  }
+    component:Test,
+    
+  },
+ 
+
 ]
 
 const router = new VueRouter({
