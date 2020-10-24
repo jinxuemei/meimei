@@ -1,6 +1,11 @@
 <template>
     <div>
-
+        Vuex
+        {{
+            $store.state.count
+        }}
+        {{count}}
+        <button>++</button>
     </div>
 </template>
 
@@ -9,7 +14,13 @@
     import { mapState } from "vuex";
     //计算属性
     export default {
-        
+        computed:{
+            ...mapState(['count'])
+        },
+
+        created(){
+            this.$store.dispatch('getMovieList')
+        }
     }
 </script>
 

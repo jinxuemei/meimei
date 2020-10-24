@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Home from './../views/Home'
 // import Test from './../views/Test'
 import Test from '@/views/Test'
+import Ivuex from '@/views/Vuex'
 import A from './../views/A'
 import B from './../views/B'
 
@@ -28,6 +29,11 @@ const routes = [
   {
     path:'/test',
     component:Test,
+    
+  },
+  {
+    path:'/vuex',
+    component:Ivuex,
     
   },
  

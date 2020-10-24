@@ -4,6 +4,8 @@
           黄婉晴
       </h2>
       <p> 别傻了 </p>
+      <router-link to="/vuex">vuex</router-link>
+      <router-view></router-view>
   </div>
 </template>
 
