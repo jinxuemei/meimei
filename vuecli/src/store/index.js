@@ -18,7 +18,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getMovieList({commit}){
+    getMovieList({ commit }){
       console.log("调用了");
       //异步请求
       axios.get('https://bird.ioliu.cn/v1?url=https://frodo.douban.com/api/v2/subject_collection/movie_showing/items?start=0&count=10&apiKey=054022eaeae0b00e0fc068c0c0a2102a')
