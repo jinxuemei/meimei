@@ -1,6 +1,5 @@
 <template>
   <div>
-    <router-link to="/head">头</router-link>
     <router-view></router-view>
     首页
   </div>
