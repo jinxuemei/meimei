@@ -1,15 +1,26 @@
 <template>
-    <div>
-首页头
-    </div>
+  <div class="container">
+    <input type="text" placeholder="请输入商品或商品名称" />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {};
 </script>
 
 <style lang="scss" scoped>
-
+.container {
+  background: #1c1b20;
+//   input居中
+  text-align: center;
+  padding: 0.2rem 0;
+  input{
+      width: 90%;
+      height: 0.6rem;
+      border: none;
+      border-radius: 0.3rem;//0.3*50
+      outline: none;
+      text-indent: 20px;
+  }
+}
 </style>
