@@ -11,12 +11,13 @@
               <span>{{ obj.score }}</span>
               <span class="sins-num">月售{{ obj.num }}+</span>
             </div>
-            <div class="si-minute">配送时间：{{ obj.minute }}</div>
+            <div class="si-minute">{{ obj.minute }}分钟</div>
           </div>
           <!-- <div class="info-num"></div> -->
         </div>
       </li>
     </ul>
+    <img class="loading" v-show="isShow" src="@/assets/images/loading.gif" alt="">
   </div>
 </template>
 
@@ -27,23 +28,49 @@ export default {
   data() {
     return {
       List: [],
+      pageNum:0,
+      isShow:true,
+      isFinished:false
     };
   },
   components: {
     Star,
   },
-  created() {
-    axios
-      .get("http://admin.gxxmglzx.com/tender/test/get_store?current=0&size=10")
+  methods:{
+    getData(){
+      axios.get("http://admin.gxxmglzx.com/tender/test/get_store?current="+this.pageNum+"&size=10")
       .then((res) => {
         // console.log(res);
-        this.List = res.data.data.list;
+
+        this.List = [...this.List,...res.data.data.list];
+        this.pageNum++;
+        this.isShow=false;
+        if(this.list.length == res.data.data.total){
+          this.isFinished = true;
+        }
       })
       .catch((error) => {
         console.log(error);
       });
+    }
   },
-};
+  created() {
+    this.getData()
+
+    window.onscroll = ()=>{
+
+      let scrollTop = document.documentElement.scrollTop;
+      let clientHeight = document.documentElement.clientHeight;
+      let scrollHeight = document.documentElement.scrollHeight;
+      // console.log(scrollTop,clientHeight,scrollHeight);
+      if((Math.ceil(scrollTop)+clientHeight==scrollHeight)&& !this.isFinished ){
+        this.isShow=true;
+        this.getData()
+      }
+    }
+  }
+  
+}
 </script>
 
 <style lang="scss" scoped>
@@ -73,12 +100,25 @@ export default {
         margin-top: 4px;
         .sin-score {
           display: flex;
-          .sins-num {
-            margin-left: 10px;
-          }
+
+          // .sins-num{
+          //   margin-left: 10px;
+          // }
+        }
+        .si-minute{
+          flex: 1;
         }
       }
     }
   }
 }
+.loading{
+  position: fixed;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width:1.4rem;
+  height:1.4rem;
+}
+
 </style>
