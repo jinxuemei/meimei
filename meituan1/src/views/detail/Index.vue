@@ -1,15 +1,32 @@
 <template>
-    <div>
-详情页
-    </div>
+  <div>
+    <detail-header></detail-header>
+    <van-tabs v-model="active" animated color="#ffd300">
+      <van-tab :title="'点菜'">点餐页</van-tab>
+      <van-tab :title="'评价'">
+        <comment></comment>
+      </van-tab>
+      <van-tab :title="'商家'">商家页</van-tab>
+    </van-tabs>
+    <!-- {{$route.query.id}} -->
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import DetailHeader from "./DetailHeader";
+import Comment from "@/views/comment/index.vue"
+export default {
+    data(){
+        return {
+            active:0
+        };
+    },
+  components: {
+    DetailHeader,
+    Comment
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
