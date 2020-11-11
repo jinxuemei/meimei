@@ -1,7 +1,9 @@
 <template>
   <div>
     <ul class="store-box">
-      <li class="store-list" v-for="obj in List" :key="obj.id">
+      <li  class="store-list" v-for="obj in List" :key="obj.id"
+           @click="$router.push({path:'/detail',query:{id:obj.id}})"
+      >
         <img class="store-img" :src="obj.img" alt="" />
         <div class="store-info">
           <h2 class="si-name">{{ obj.name }}</h2>
