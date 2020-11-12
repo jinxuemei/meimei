@@ -13,18 +13,21 @@
 </template>
 
 <script>
+// import axios from 'axios'
 import DetailHeader from "./DetailHeader";
 import Comment from "@/views/comment/index.vue"
 export default {
     data(){
         return {
-            active:0
+          // id:this.$route.query.id,
+          active:0
         };
     },
   components: {
     DetailHeader,
     Comment
   },
+
 };
 </script>
 
