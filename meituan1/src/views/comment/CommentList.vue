@@ -44,7 +44,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props:['list'],
+};
 </script>
 
 <style lang="scss" scoped>

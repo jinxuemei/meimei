@@ -2,7 +2,9 @@
   <div>
     <detail-header></detail-header>
     <van-tabs v-model="active" animated color="#ffd300">
-      <van-tab :title="'点菜'">点餐页</van-tab>
+      <van-tab :title="'点菜'">
+        <Order></Order>
+      </van-tab>
       <van-tab :title="'评价'">
         <comment></comment>
       </van-tab>
@@ -16,6 +18,7 @@
 // import axios from 'axios'
 import DetailHeader from "./DetailHeader";
 import Comment from "@/views/comment/index.vue"
+import Order from "@/views/order/index.vue"
 export default {
     data(){
         return {
@@ -25,7 +28,8 @@ export default {
     },
   components: {
     DetailHeader,
-    Comment
+    Comment,
+    Order
   },
 
 };

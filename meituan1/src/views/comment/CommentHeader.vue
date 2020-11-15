@@ -56,7 +56,7 @@ export default {
   .s-other{
         flex: 1 1 auto;
         padding-left: 0;
-        font-size: 11px;
+        font-size: 13px;
         .so-taste{
           display: flex;
           margin: 3px 0 10px;
