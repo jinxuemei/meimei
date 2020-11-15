@@ -1,41 +1,23 @@
 <template>
   <div>
     <div class="class-box">
-      <span>全部</span>
-      <span>好评</span>
-      <span>差评</span>
-      <span>有图评价</span>
+      <span :class="{active:obj.id == typeId}"
+      @click="change(obj.id)"
+      v-for="obj in list.label" :key="obj.id">
+      {{ obj.name }} ({{ obj.count }})
+      </span>
     </div>
     <ul class="eva-box">
-      <li class="eva-list">
-        <img
-          src="https://img.meituan.net/avatar/6bfdbb0e522217d27ba51b69a8a89a4212210.jpg"
-          alt=""
-        />
+      <li class="eva-list" v-for="obj in list.rate" :key="obj.id">
+        <img :src="obj.portrait" alt="" />
         <div class="eva-info">
           <div class="user-info">
-            <div class="user-name">匿名用户</div>
-            <div class="eva-time">2020-11-07</div>
+            <div class="user-name">{{ obj.name }}</div>
+            <div class="eva-time">{{ obj.time }}</div>
           </div>
-          <div class="del-time">37分钟送达</div>
+          <div class="del-time">{{ obj.duration }}分钟送达</div>
           <div class="eva-content">
-            挺好吃的，包装好，给的丸子都是好丸子#麻辣烫套餐15自选10种#
-          </div>
-        </div>
-      </li>
-            <li class="eva-list">
-        <img
-          src="https://img.meituan.net/avatar/6bfdbb0e522217d27ba51b69a8a89a4212210.jpg"
-          alt=""
-        />
-        <div class="eva-info">
-          <div class="user-info">
-            <div class="user-name">匿名用户</div>
-            <div class="eva-time">2020-11-07</div>
-          </div>
-          <div class="del-time">37分钟送达</div>
-          <div class="eva-content">
-            挺好吃的，包装好，给的丸子都是好丸子#麻辣烫套餐15自选10种#
+            {{ obj.content }}
           </div>
         </div>
       </li>
@@ -45,7 +27,21 @@
 
 <script>
 export default {
-  props:['list'],
+  props: ["list"],
+  created() {
+    console.log(this.list);
+  },
+  data(){
+    return{
+      typeId:1
+    }
+  },
+  methods:{
+    change(id){
+      this.$emit('xx',id)
+      this.typeId = id;
+    }
+  }
 };
 </script>
 
@@ -66,6 +62,11 @@ export default {
     text-align: center;
     border: solid 1px #bbb;
     border-radius: 0.52rem;
+
+    &.active{
+      background: fffbf1;
+      border: 1px solid #ffb000;
+    }
   }
 }
 .eva-box {
