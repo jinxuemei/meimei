@@ -42,6 +42,7 @@ export default {
     }
     .i-basic {
       flex: 1;
+      width: 0;//不受子元素宽度撑大
       padding-left: 0.2rem;
       .i-time,
       .i-notice ,.i-full{
@@ -49,14 +50,11 @@ export default {
         line-height: 0.32rem;
         font-size: 12px;
         padding-bottom: 5px;
-        overflow: hidden;
-      }
-      .i-notice {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-right: 10px;
       }
+      
     }
   }
 }

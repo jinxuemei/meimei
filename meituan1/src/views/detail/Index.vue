@@ -12,7 +12,7 @@
         <van-tab :title="'商家'">商家页</van-tab>
       </van-tabs>
       <!-- {{$route.query.id}} -->
-      <Cart v-if="active==0"></Cart>
+      <Cart v-if="active==0" :storeMsg = 'storeMsg'></Cart>
     </div>
    
   </div>
