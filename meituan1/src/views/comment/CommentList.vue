@@ -2,8 +2,9 @@
   <div>
     <div class="class-box">
       <span :class="{active:obj.id == typeId}"
-      @click="change(obj.id)"
-      v-for="obj in list.label" :key="obj.id">
+      
+      v-for="obj in list.label" :key="obj.id"
+      @click="change(obj.id)">
       {{ obj.name }} ({{ obj.count }})
       </span>
     </div>
@@ -28,9 +29,9 @@
 <script>
 export default {
   props: ["list"],
-  created() {
-    console.log(this.list);
-  },
+  // created() {
+  //   // console.log(this.list);
+  // },
   data(){
     return{
       typeId:1
