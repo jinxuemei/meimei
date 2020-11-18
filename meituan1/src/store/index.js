@@ -12,14 +12,26 @@ export default new Vuex.Store({
       state.prodlist = list;
     },
     add(state,{typeIndex,index}){
+      // console.log(typeIndex,index);
       let prod = state.prodlist[typeIndex].content[index];
       if(prod.count){
         Vue.set(prod,'count',prod.count+1)
       }else{
         Vue.set(prod,'count',1);
       }
-
+    },
+    minus(state,{typeIndex,index}){
+      // console.log(typeIndex,index);
+      let prod = state.prodlist[typeIndex].content[index];
+      if(prod.count>1){
+        Vue.set(prod,'count',prod.count-1)
+      }else{
+        Vue.set(prod,'count',0);
+      }
     }
+  },
+  getters:{
+    
   },
   actions: {
   },

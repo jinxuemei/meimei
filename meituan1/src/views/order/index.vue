@@ -25,8 +25,8 @@
                 <p>{{ prod.price }}</p>
               </div>
               <div class="add-cart">
-                <span class="iconfont icon-jianhao" v-if="prod.count>0"></span>
-                <span class="num">{{prod.count}}</span>
+                <span class="iconfont icon-jianhao" v-if="prod.count>0" @click="$store.commit('minus',{typeIndex,index})"></span>
+                <span class="num" v-if="prod.count>0">{{prod.count}}</span>
                 <span class="iconfont icon-jiahao" @click="$store.commit('add',{typeIndex,index})"></span>
               </div>
             </li>
@@ -80,6 +80,10 @@ export default {
         // console.log(res.data.data);
         this.nav = res.data.data.nav;
         this.goods = res.data.data.goods;
+
+        //vuex存储数据
+        this.$store.commit('save',this.goods);
+
         //等待DOM更新以后执行回调函数
         this.$nextTick(() => {
           this.navScroll = new BetterScroll(".nav-box", {
