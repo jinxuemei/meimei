@@ -3,9 +3,12 @@
     <div class="cart">
       <div class="circle">
         <span class="iconfont icon-gouwuche"></span >
+        <span v-if="$store.getters.total>0">{{$store.getters.total}}</span>
       </div >
       <div class="fee">
-        <p>另需配送费{{storeMsg.fee}}元</p>
+        <p>另需配送费{{storeMsg.fee}}元
+          {{$store.getters.totalPrice}}
+        </p>
       </div>
       <div class="price">
         <p>{{storeMsg.price}}元起送</p>

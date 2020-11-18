@@ -87,11 +87,11 @@ export default {
         //等待DOM更新以后执行回调函数
         this.$nextTick(() => {
           this.navScroll = new BetterScroll(".nav-box", {
-            click: true,
+            click: false,
             bounce: false,
           });
           this.proScroll = new BetterScroll(".pro-box", {
-            click: true,
+            click: false,
             bounce: false,
             probeType: 3,
           });

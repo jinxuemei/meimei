@@ -31,7 +31,29 @@ export default new Vuex.Store({
     }
   },
   getters:{
-    
+    total(state){
+      let sum=0;
+      state.prodlist.forEach((type)=>{
+        // console.log(type);
+        type.content.forEach(prod =>{
+          if(prod.count > 0){
+            sum += prod.count;
+          }
+        })
+      })
+      return sum;
+    },
+    totalPrice(state){
+      let sumPrice = 0;
+      state.prodlist.forEach((type)=>{
+        type.content.forEach(prod =>{
+          if(prod.count > 0){
+            sumPrice +=prod.count * prod.price;
+          }
+        })
+      })
+      return sumPrice;
+    }
   },
   actions: {
   },

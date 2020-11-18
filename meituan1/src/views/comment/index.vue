@@ -41,7 +41,7 @@ export default {
           this.$nextTick(() => {
             new BetterScroll(".comment-wrapper", {
               bounce: false,
-              click: true,
+              click: false,
             });
           });
         });
