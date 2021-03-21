@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
+    <!-- state 动态修改值 只有class组件有 单向数据改变 数据变页面变
+
+    初始化 this.state = { num : 1 }
+    获取state this.state.num 
+    修改state  setState  参数为对象 {} -->
     <div id="root"></div>
     <script src="react.development.js"></script>
     <script src="react-dom.development.js"></script>
@@ -16,27 +19,37 @@
 
     <script type="text/babel">
         //定义组件 组件首字母大写 return方式
-        class Hello extends React.Component {
+        class Count extends React.Component {
             constructor() {
                 super()
+
+                //初始化
+                this.state = {
+                    num : 1,
+                    num2:3
+                }
             }
             render() {
+                let {num,num2} = this.state;
                 return (
                     <div>
-                        <p>哈哈哈</p>
-                        <p>变：{this.props.title}</p>
+                        <h2>{num} --- {num2}</h2>
+                        <button onClick={()=>{
+                            //修改
+                            this.setState({
+                                num:num+1
+                            })
+                        }}>click</button>
                     </div>
                 )
             }
         }
         //调用组件 大写的方式调用
         ReactDOM.render(
-            <Hello title="多喝水"></Hello>
+            <Count></Count>
             ,
             document.getElementById('root')
         )
     </script>
-
 </body>
-
 </html>

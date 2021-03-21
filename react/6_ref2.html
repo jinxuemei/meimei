@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -13,28 +12,25 @@
     <script src="react.development.js"></script>
     <script src="react-dom.development.js"></script>
     <script src="babel.min.js"></script>
-
+    <!-- 函数方法定义 -->
     <script type="text/babel">
-        //定义组件 组件首字母大写 return方式
         class Hello extends React.Component {
-            constructor() {
-                super()
-            }
             render() {
                 return (
                     <div>
-                        <p>哈哈哈</p>
-                        <p>变：{this.props.title}</p>
+                        <input type="text"  ref={(input)=>this.myInput = input} />
+                        <button onClick={() => {
+                            console.log(this.myInput);
+                        }}>click</button>
                     </div>
                 )
             }
         }
-        //调用组件 大写的方式调用
         ReactDOM.render(
-            <Hello title="多喝水"></Hello>
-            ,
+            <Hello></Hello>,
             document.getElementById('root')
         )
+
     </script>
 
 </body>
